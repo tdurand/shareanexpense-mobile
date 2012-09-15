@@ -24,6 +24,7 @@
             <ul>
                 <li>HTML5 Boilerplate</li>
                 <li>Twitter Bootstrap</li>
+                <li>RequireJS</li>
             </ul>
             <p>installed.</p>
             <h3>Enjoy coding! - Yeoman</h3>
@@ -48,5 +49,9 @@
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
-    </body>
+    
+    <!-- build:js scripts/amd-app.js -->
+    <script data-main="scripts/main" src="scripts/vendor/require.js"></script>
+    <!-- endbuild -->
+</body>
 </html>
