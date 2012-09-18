@@ -1,12 +1,14 @@
 require.config({
     //path mappings for module names not found directly under baseUrl
     paths: {
-        jquery:     'vendor/jqm/jquery-1.8.1.min',
-        jqm:     'vendor/jqm/jquery.mobile-1.1.1.min',
-        underscore: 'vendor/underscore/lodash.min',
-        backbone:   'vendor/backbone/backbone-min-amd',
-        text:       'vendor/require/text',
-        modules:    '../modules'
+        jquery:     'scripts/vendor/jqm/jquery-1.8.1.min',
+        jqm:        'scripts/vendor/jqm/jquery.mobile-1.1.1.min',
+        underscore: 'scripts/vendor/underscore/lodash.min',
+        backbone:   'scripts/vendor/backbone/backbone-min-amd',
+        text:       'scripts/vendor/require/text',
+        models:     'models',
+        views:      'views',
+        templates:  'templates'
     }
 
 });

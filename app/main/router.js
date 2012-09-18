@@ -1,20 +1,34 @@
-define(['jquery', 'underscore', 'backbone','modules/home/home',
-            'jqm'],
-	function($, _, Backbone,HomeView) {
+define([
+        'jquery',
+        'underscore',
+        'backbone',
+        'views/home/home',
+        'views/participant/addParticipant',
+        'jqm'
+        ],
+	function($, _, Backbone,HomeView,AddParticipantView) {
 
     'use strict';
     var Router = Backbone.Router.extend({
     //define routes and mapping route to the function
         routes: {
-        	'':    'showHome',           //home view
+        	'':    'index',           //home view
+            'participant/#add': 'addParticipant' //dialog to add participant
         },
 
-	    showHome:function(actions){
+	    index:function(){
 	    	// will render home view and navigate to homeView
 	    	var homeView=new HomeView();
 	    	homeView.render();
 	    	this.changePage(homeView);
 	    },
+
+        addParticipant:function() {
+            //
+            var addParticipantView=new AddParticipantView();
+            addParticipantView.render();
+            this.changePage(addParticipantView);
+        },
 
         init:true,
 
@@ -25,6 +39,7 @@ define(['jquery', 'underscore', 'backbone','modules/home/home',
         changePage:function (view) {
         	//add the attribute 'data-role="page" ' for each view's div
     		view.$el.attr('data-role', 'page');
+
             //append to dom
         	$('body').append(view.$el);
 
