@@ -1,10 +1,27 @@
-define(['jquery', 'underscore', 'backbone','text!templates/participant/addParticipantViewTemplate.html'],
-function($, _, Backbone, AddParticipantViewTemplate){
+define(['jquery', 'underscore', 'backbone',
+        'text!templates/participant/addParticipantViewTemplate.html'
+        ],
+
+function($, _, Backbone, AddParticipantViewTemplate,Router){
 
   var AddParticipantViewTemplate = Backbone.View.extend({
 
     //initialize template
     template:_.template(AddParticipantViewTemplate),
+
+    //Events
+    events: {
+        'submit' : 'add'
+    },
+
+    add: function(e) {
+        e.preventDefault();
+        this.options.participantList.add({
+            name:this.$("#name").val(),
+            amount:this.$("#amount").val(),
+        });
+        this.reset();
+    },
 
     //render the content into div of view
     render: function(){
@@ -16,6 +33,10 @@ function($, _, Backbone, AddParticipantViewTemplate){
       //return to enable chained calls
       return this;
     },
+
+    reset: function(){
+        this.$('input').val('');
+    }
 
   });
   return AddParticipantViewTemplate;

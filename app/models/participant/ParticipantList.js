@@ -3,8 +3,7 @@ function($, _, Backbone,Participant){
 
   var ParticipantList = Backbone.Collection.extend({
 
-    model:Participant
-
+    model:Participant,
 
 
   });
