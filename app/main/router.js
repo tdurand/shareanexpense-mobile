@@ -5,12 +5,14 @@ define([
         'jqmr',
         'views/home/home',
         'views/participant/addParticipant',
+        'views/result/result',
         'jqm'
         ],
-	function($, _, Backbone,jqmr,HomeView,AddParticipantView) {
+	function($, _, Backbone,jqmr,HomeView,AddParticipantView,ResultView) {
         var Router=new $.mobile.Router({
         "/index":   { handler: 'index', events: "bc" },
         "/participant/add":   { handler: 'addParticipant', events: "bc" },
+        "/result":   { handler: 'result', events: "bc" },
       }, {
         index:function(){
             console.log("index");
@@ -23,6 +25,12 @@ define([
             console.log("add participant");
             var addParticipantView=new AddParticipantView();
             addParticipantView.render();
+        },
+
+        result:function() {
+            console.log("result");
+            var resultView=new ResultView();
+            resultView.render();
         },
 
         default: function(){
