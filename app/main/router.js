@@ -45,9 +45,6 @@ define([
 });
 
 
-            // this._participantList=new ParticipantList();
-
-
 
 
 

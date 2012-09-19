@@ -1,5 +1,7 @@
-define(['jquery', 'underscore', 'backbone','text!templates/home/homeViewTemplate.html'],
-function($, _, Backbone, homeViewTemplate){
+define(['jquery', 'underscore', 'backbone',
+        'models/participant/ParticipantList',
+        'text!templates/home/homeViewTemplate.html'],
+function($, _, Backbone,ParticipantList,homeViewTemplate){
 
   var HomeView = Backbone.View.extend({
 
@@ -18,7 +20,5 @@ function($, _, Backbone, homeViewTemplate){
   });
   return HomeView;
 });
-
-
 
 
