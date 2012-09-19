@@ -1,8 +1,9 @@
 define(['jquery', 'underscore', 'backbone',
+        'models/participant/ParticipantList',
         'text!templates/participant/addParticipantViewTemplate.html'
         ],
 
-function($, _, Backbone, AddParticipantViewTemplate,Router){
+function($, _, Backbone, ParticipantList,AddParticipantViewTemplate){
 
   var AddParticipantViewTemplate = Backbone.View.extend({
 

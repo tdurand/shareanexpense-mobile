@@ -7,7 +7,7 @@ function($, _, Backbone,Participant){
 
 
   });
-  return ParticipantList;
+  return new ParticipantList();
 });
 
 
