@@ -6,6 +6,8 @@ function($, _, Backbone, AddParticipantViewTemplate,Router){
 
   var AddParticipantViewTemplate = Backbone.View.extend({
 
+    el: '#addParticipant',
+
     //initialize template
     template:_.template(AddParticipantViewTemplate),
 
@@ -15,12 +17,8 @@ function($, _, Backbone, AddParticipantViewTemplate,Router){
     },
 
     add: function(e) {
+        console.log("coucou")
         e.preventDefault();
-        this.options.participantList.add({
-            name:this.$("#name").val(),
-            amount:this.$("#amount").val(),
-        });
-        this.reset();
     },
 
     //render the content into div of view

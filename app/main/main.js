@@ -6,6 +6,7 @@ require.config({
         underscore:   '../scripts/vendor/underscore/lodash.min',
         backbone:     '../scripts/vendor/backbone/backbone-min-amd',
         text:         '../scripts/vendor/require/text',
+        jqmr :        '../scripts/vendor/jqm/jquery.mobile.router.min',
         models:       '../models',
         views:        '../views',
         templates:    '../templates'
@@ -13,14 +14,10 @@ require.config({
 
 });
 
-//1. load app.js,
-//2. configure jquery mobile to prevent default JQM ajax navigation
-//3. bootstrapping application
-define(['app','jqm-config'], function(app) {
+//1. load router.js,
+define(['jquery','underscore', 'backbone','router'],function($, _, Backbone,Router) {
     $(document).ready(function() {
       console.log("DOM IS READY");// Handler for .ready() called.
     });
-    app.initialize();
 });
-
 
