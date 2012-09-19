@@ -14,8 +14,12 @@
    </p>
 
   <ul data-role="listview" data-inset="true" data-split-icon="delete" data-split-theme="d">
-        <%=
-        participantList.size()
+        <%
+        participantList.each(function(participant) {
+        %>
+            <li><%= participant.attributes.name %></li>
+        <%
+            });
         %>
   </ul>
 
