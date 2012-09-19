@@ -4,7 +4,7 @@
 
 <div data-role="content">
 
-    <form>
+    <form data-ajax="false">
       <div data-role="fieldcontain">
            <label for="name">Name:</label>
            <input type="text" name="name" id="name" autofocus />
@@ -13,7 +13,6 @@
            <label for="amount">Amount:</label>
            <input type="number" name="amount" id="amount" value="0" min="0" step="1" />
       </div>
-      <a href="#" data-role="button" data-rel="back">Back</a>
       <input type="submit" value="Add" />
     </form>
 </div><!-- /content -->

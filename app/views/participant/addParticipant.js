@@ -18,8 +18,13 @@ function($, _, Backbone, ParticipantList,AddParticipantViewTemplate){
     },
 
     add: function(e) {
-        console.log("coucou")
         e.preventDefault();
+        ParticipantList.add({
+            name:this.$("#name").val(),
+            amount:this.$("#amount").val(),
+        });
+        this.reset();
+        $('.ui-dialog').dialog('close');
     },
 
     //render the content into div of view
@@ -27,7 +32,7 @@ function($, _, Backbone, ParticipantList,AddParticipantViewTemplate){
 	  //this.el is the root element of Backbone.View. By default, it is a div.
       //$el is cached jQuery object for the view's element.
       //append the compiled template into view div container
-      this.$el.append(this.template());
+      this.$el.html(this.template());
 
       //return to enable chained calls
       return this;

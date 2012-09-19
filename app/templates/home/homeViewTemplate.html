@@ -1,19 +1,27 @@
-  <div data-role="header" data-theme="b">
+<div data-role="header" data-theme="b">
     <h1>Shareanexpense</h1>
-  </div><!-- /header -->
+</div><!-- /header -->
 
-  <div data-role="content">
+<div data-role="content">
 
-    <div data-role="fieldcontain">
-      <p>Participant
-      <a href="participant/add" data-rel="dialog" data-role="button" data-icon="plus" data-transition="pop" data-inline="true">Add</a>
-       </p>
-
-      <ul data-role="listview" data-inset="true" data-split-icon="delete" data-split-theme="d">
-      </ul>
-
-    </div>
-      <a href="result" data-role="button" data-theme="b">Share</a>
+<form id="formPrincipal" action="" method="post">
+  <input type="hidden" id="nbPers" name="nbPers" value="0">
 
 
-  </div><!-- /content -->
+<div data-role="fieldcontain">
+  <p>Participant
+  <a href="participant/add" data-rel="dialog" data-role="button" data-icon="plus" data-transition="pop" data-inline="true">Add</a>
+   </p>
+
+  <ul data-role="listview" data-inset="true" data-split-icon="delete" data-split-theme="d">
+        <%=
+        participantList.size()
+        %>
+  </ul>
+
+</div>
+  <input type="submit" data-theme="b" value="Share">
+
+</form>
+
+</div><!-- /content -->
